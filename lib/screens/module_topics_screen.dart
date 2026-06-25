@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'summary_screen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-class ModuleTopicsScreen extends StatelessWidget {
+class ModuleTopicsScreen extends StatefulWidget {
   final String moduleName;
 
   const ModuleTopicsScreen({
@@ -10,12 +11,19 @@ class ModuleTopicsScreen extends StatelessWidget {
   });
 
   @override
+  State<ModuleTopicsScreen> createState() =>
+      _ModuleTopicsScreenState();
+}
+
+class _ModuleTopicsScreenState extends State<ModuleTopicsScreen> {
+
+  @override
   Widget build(BuildContext context) {
 
     List<String> topics = [];
     int completedTopics = 5;
 
-    if (moduleName == 'MLB111') {
+    if (widget.moduleName == 'MLB111') {
       topics = [
         'Cells and Cell Structure',
         'Cell Membranes',
@@ -29,7 +37,7 @@ class ModuleTopicsScreen extends StatelessWidget {
       ];
     }
 
-    if (moduleName == 'PHY131') {
+    if (widget.moduleName == 'PHY131') {
       topics = [
         'Vectors and Forces',
         'Newton Second Law',
@@ -45,7 +53,7 @@ class ModuleTopicsScreen extends StatelessWidget {
       ];
     }
 
-    if (moduleName == 'CMY117') {
+    if (widget.moduleName == 'CMY117') {
       topics = [
         'Matter and Measurement',
         'Atoms Molecules and Ions',
@@ -62,7 +70,7 @@ class ModuleTopicsScreen extends StatelessWidget {
       ];
     }
 
-    if (moduleName == 'WTW134') {
+    if (widget.moduleName == 'WTW134') {
       topics = [
         'Functions and Change',
         'Differentiation',
@@ -80,7 +88,7 @@ class ModuleTopicsScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(moduleName),
+        title: Text(widget.moduleName),
         centerTitle: true,
       ),
         body: Column(

@@ -38,6 +38,14 @@ class SummaryScreen extends StatelessWidget {
       return const CellCycleAndCellDivisionPage();
     }
 
+    if (topicName == "DNA and Heredity") {
+      return const DNAAndHeredityPage();
+    }
+
+    if (topicName == "Gene Expression and Mutation") {
+      return const GeneExpressionAndMutationPage();
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: Text(topicName),
@@ -6079,6 +6087,3992 @@ class CellCycleAndCellDivisionPage extends StatelessWidget {
             ),
 
             const SizedBox(height: 40),
+            
+            const Text(
+              "When Cell Division Goes Wrong",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "The cell cycle is tightly regulated because uncontrolled cell division can be dangerous. If cells divide when they should not, tissues can become damaged and diseases may develop.",
+            ),
+
+            bodyText(
+              "Normally, checkpoints, cyclins and CDKs ensure that only healthy cells continue through the cell cycle.",
+            ),
+
+            bullet("Healthy cells follow checkpoints"),
+            bullet("Damaged cells are repaired"),
+            bullet("Dangerous cells are removed"),
+            bullet("Cell division remains controlled"),
+
+            bodyText(
+              "However, mutations in genes controlling the cell cycle can remove these safeguards.",
+            ),
+
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.red.shade50,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Text(
+                "Exam Tip: Cancer is often caused by loss of normal cell-cycle control.",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 30),
+
+            const Text(
+              "Cancer",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "Cancer is a disease in which cells divide uncontrollably and ignore the normal signals that regulate cell growth.",
+            ),
+
+            bullet("Uncontrolled cell division"),
+            bullet("Loss of checkpoint control"),
+            bullet("Formation of tumours"),
+            bullet("Can spread to other tissues"),
+
+            bodyText(
+              "Many cancers begin when mutations occur in genes that regulate the cell cycle.",
+            ),
+
+            bodyText(
+              "Instead of stopping, repairing damage or dying, the abnormal cell continues dividing repeatedly.",
+            ),
+
+            const SizedBox(height: 30),
+
+            const Text(
+              "Programmed Cell Death",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "Not every cell is meant to live forever. Some cells must be removed when they become damaged, infected or are no longer needed.",
+            ),
+
+            bodyText(
+              "Cells can die through apoptosis or necrosis.",
+            ),
+
+            topicImage("assets/Apoptosis_vs_Nectosis.png"),
+
+            const SizedBox(height: 20),
+
+            const Text(
+              "Apoptosis",
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "Apoptosis is programmed cell death. It is a controlled process in which the cell deliberately destroys itself for the benefit of the organism.",
+            ),
+
+            bullet("Controlled process"),
+            bullet("Cell shrinks"),
+            bullet("Cell contents remain contained"),
+            bullet("No inflammation"),
+
+            bodyText(
+              "Apoptosis is important during development, tissue maintenance and removal of damaged cells.",
+            ),
+
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.green.shade50,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Text(
+                "Apoptosis = Planned cell death.",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 20),
+
+            const Text(
+              "Necrosis",
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "Necrosis is uncontrolled cell death caused by injury, toxins, infection or lack of oxygen.",
+            ),
+
+            bullet("Uncontrolled process"),
+            bullet("Cell swells"),
+            bullet("Cell bursts"),
+            bullet("Causes inflammation"),
+
+            bodyText(
+              "Unlike apoptosis, necrosis damages surrounding tissues because cell contents spill into the environment.",
+            ),
+
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.orange.shade50,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Text(
+                "Memory Trick: Apoptosis is organised. Necrosis is messy.",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 30),
+
+            const Text(
+              "Mutations",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            topicImage("assets/Types_of_Mutation.png"),
+
+            bodyText(
+              "A mutation is a change in the DNA sequence.",
+            ),
+
+            bodyText(
+              "Mutations can occur naturally during DNA replication or be caused by environmental factors such as radiation and certain chemicals.",
+            ),
+
+            bullet("Change in DNA sequence"),
+            bullet("Can be harmful"),
+            bullet("Can be beneficial"),
+            bullet("Can have no effect"),
+
+            const SizedBox(height: 20),
+
+            const Text(
+              "Major Types of Mutations",
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bullet("Substitution"),
+            bullet("Insertion"),
+            bullet("Deletion"),
+
+            bodyText(
+              "A substitution replaces one nucleotide with another.",
+            ),
+
+            bodyText(
+              "An insertion adds extra nucleotides into the DNA sequence.",
+            ),
+
+            bodyText(
+              "A deletion removes nucleotides from the DNA sequence.",
+            ),
+
+            bodyText(
+              "Insertions and deletions are often particularly harmful because they can shift the reading frame of a gene.",
+            ),
+
+            bodyText("For clear difference between Silent Mutation, Nonsense Mutation and Frameshift Mutation visualise from the above image for understanding.",),
+
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.blue.shade50,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Text(
+                "Exam Tip: Mutations create genetic variation but may also cause disease.",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 40),
+
+            const Text(
+              "Big Picture Summary",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "The Cell Cycle ensures that cells grow, copy their DNA and divide correctly. DNA is packaged into chromosomes, replicated during Interphase and distributed equally during Mitosis. Cell-cycle checkpoints, cyclins and CDKs regulate division and help prevent errors. When regulation fails, diseases such as cancer can occur.",
+            ),
+
+            bodyText(
+              "Cells can also die through apoptosis (controlled cell death) or necrosis (uncontrolled cell death). Mutations introduce changes into DNA and can influence how cells function.",
+            ),
+
+            Container(
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: Colors.blue.shade50,
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: const Text(
+                "Mastering the Cell Cycle means understanding how cells grow, copy DNA, divide and maintain healthy tissues.",
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  height: 1.5,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 30),
+
+            const Text(
+              "Exam Essentials",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            const SizedBox(height: 15),
+
+            Card(
+              child: Padding(
+                padding: EdgeInsets.all(16),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+
+                    Text("• DNA wraps around histones to form chromatin."),
+                    Text("• Chromatin condenses into chromosomes."),
+                    Text("• Sister chromatids are joined by a centromere."),
+                    Text("• Interphase consists of G1, S and G2."),
+                    Text("• DNA replication occurs during S phase."),
+                    Text("• Cyclins and CDKs regulate the cell cycle."),
+                    Text("• Binary fission occurs in prokaryotes."),
+                    Text("• Mitosis consists of PMAT."),
+                    Text("• Cytokinesis divides the cytoplasm."),
+                    Text("• Cancer results from uncontrolled cell division."),
+                    Text("• Apoptosis is programmed cell death."),
+                    Text("• Necrosis is uncontrolled cell death."),
+                    Text("• Mutations are changes in DNA sequence."),
+
+                  ],
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 30),
+
+            const Text(
+              "Practice Questions",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            const SizedBox(height: 15),
+
+            Card(
+              child: Padding(
+                padding: EdgeInsets.all(16),
+                child: Text(
+                  "1. Why must DNA be packaged?\n\n"
+                      "2. What is chromatin?\n\n"
+                      "3. What is a chromosome?\n\n"
+                      "4. What are sister chromatids?\n\n"
+                      "5. What is the function of the centromere?\n\n"
+                      "6. What are the three phases of Interphase?\n\n"
+                      "7. During which phase is DNA replicated?\n\n"
+                      "8. What are cyclins and CDKs?\n\n"
+                      "9. What is binary fission?\n\n"
+                      "10. What is the purpose of mitosis?\n\n"
+                      "11. Name the four stages of mitosis.\n\n"
+                      "12. What happens during metaphase?\n\n"
+                      "13. What happens during anaphase?\n\n"
+                      "14. What is cytokinesis?\n\n"
+                      "15. What is cancer?\n\n"
+                      "16. What is apoptosis?\n\n"
+                      "17. What is necrosis?\n\n"
+                      "18. What is a mutation?\n\n"
+                      "19. Name three major mutation types.\n\n"
+                      "20. Why are cell-cycle checkpoints important?",
+                  style: TextStyle(
+                    fontSize: 16,
+                    height: 1.6,
+                  ),
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 30),
+
+            const Text(
+              "Suggested Answers",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            const SizedBox(height: 15),
+
+            Card(
+              child: Padding(
+                padding: EdgeInsets.all(16),
+                child: Text(
+                  "1. To fit DNA inside the nucleus.\n\n"
+                      "2. DNA wrapped around histone proteins.\n\n"
+                      "3. Condensed DNA.\n\n"
+                      "4. Identical copies of a chromosome.\n\n"
+                      "5. It holds sister chromatids together.\n\n"
+                      "6. G1, S and G2.\n\n"
+                      "7. S phase.\n\n"
+                      "8. Proteins that regulate the cell cycle.\n\n"
+                      "9. Cell division in prokaryotes.\n\n"
+                      "10. To produce two genetically identical daughter cells.\n\n"
+                      "11. Prophase, Metaphase, Anaphase and Telophase.\n\n"
+                      "12. Chromosomes align at the equator.\n\n"
+                      "13. Sister chromatids separate.\n\n"
+                      "14. Division of the cytoplasm.\n\n"
+                      "15. Uncontrolled cell division.\n\n"
+                      "16. Programmed cell death.\n\n"
+                      "17. Uncontrolled cell death.\n\n"
+                      "18. A change in DNA sequence.\n\n"
+                      "19. Substitution, insertion and deletion.\n\n"
+                      "20. They prevent damaged cells from dividing.",
+                  style: TextStyle(
+                    fontSize: 16,
+                    height: 1.6,
+                  ),
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 30),
+
+            Container(
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: Colors.green.shade50,
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: const Text(
+                "Congratulations! You have completed Cell Cycle and Cell Division. If you understand DNA packaging, Interphase, Mitosis, Cytokinesis, Cell-Cycle Control, Cancer, Apoptosis and Mutations, then you have mastered one of the most important foundations of modern biology.",
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  height: 1.6,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 50),
+
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+
+class DNAAndHeredityPage extends StatelessWidget {
+  const DNAAndHeredityPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("DNA and Heredity"),
+      ),
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+
+            const Text(
+              "DNA and Heredity",
+              style: TextStyle(
+                fontSize: 28,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            const SizedBox(height: 20),
+
+            bodyText(
+              "Every cell in your body contains instructions that tell it how to function. These instructions determine everything from the proteins a cell produces to how the organism grows and develops.",
+            ),
+
+            bodyText(
+              "The molecule that stores these instructions is DNA. DNA is one of the most important molecules in biology because it contains the information needed for life.",
+            ),
+
+            topicImage("assets/DNA.png"),
+
+            const Text(
+              "What Is Heredity?",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "Heredity is the passing of characteristics from parents to offspring.",
+            ),
+
+            bodyText(
+              "When children resemble their parents in eye colour, hair colour, height or other characteristics, this occurs because genetic information has been inherited.",
+            ),
+
+            bullet("Parents pass genetic information to offspring"),
+            bullet("DNA carries inherited information"),
+            bullet("Inherited information influences traits"),
+
+            bodyText(
+              "The study of how characteristics are inherited is called genetics.",
+            ),
+
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.green.shade50,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Text(
+                "Exam Tip: Heredity is the transmission of genetic information from one generation to the next.",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 30),
+
+            const Text(
+              "Why Is DNA So Important?",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "DNA acts like a biological information storage system. Just as a computer stores instructions in code, cells store instructions in DNA.",
+            ),
+
+            bodyText(
+              "These instructions tell cells:",
+            ),
+
+            bullet("Which proteins to make"),
+            bullet("When to grow"),
+            bullet("When to divide"),
+            bullet("How to perform specialised functions"),
+
+            bodyText(
+              "Without DNA, cells would have no instructions and life could not exist.",
+            ),
+
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.blue.shade50,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Text(
+                "Think of DNA as the instruction manual for building and operating an organism.",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 30),
+
+            const Text(
+              "How Do We Know DNA Is the Genetic Material?",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            topicImage("assets/Experiments.png"),
+
+            bodyText(
+              "Scientists once debated whether proteins or DNA carried genetic information.",
+            ),
+
+            bodyText(
+              "A series of experiments eventually demonstrated that DNA is the molecule responsible for heredity.",
+            ),
+
+            bodyText(
+              "The most important conclusion from these experiments was that DNA contains the instructions that can be passed from one generation to the next.",
+            ),
+
+            bullet("DNA stores genetic information"),
+            bullet("DNA can be copied"),
+            bullet("DNA can be inherited"),
+            bullet("DNA controls cell activities"),
+
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.orange.shade50,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Text(
+                "You do not need to memorise every experimental detail. Understand the conclusion: DNA is the hereditary material.",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 30),
+
+            const Text(
+              "The Structure of DNA",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "DNA stands for Deoxyribonucleic Acid.",
+            ),
+
+            bodyText(
+              "DNA has a unique double-helix structure that resembles a twisted ladder.",
+            ),
+
+            bullet("DNA consists of two strands"),
+            bullet("The strands twist around each other"),
+            bullet("The structure is called a double helix"),
+
+            bodyText(
+              "The sides of the ladder are formed by sugar and phosphate molecules, while the rungs are formed by nitrogenous bases.",
+            ),
+
+            const SizedBox(height: 20),
+
+            const Text(
+              "The Four Nitrogenous Bases",
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bullet("Adenine (A)"),
+            bullet("Thymine (T)"),
+            bullet("Cytosine (C)"),
+            bullet("Guanine (G)"),
+
+            bodyText(
+              "The sequence of these bases stores genetic information in the same way letters form words in a language.",
+            ),
+
+            bodyText(
+              "The order of bases determines the instructions contained in the DNA molecule.",
+            ),
+
+            const SizedBox(height: 20),
+
+            const Text(
+              "Complementary Base Pairing",
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "The bases do not pair randomly. They always follow specific pairing rules.",
+            ),
+
+            bullet("A pairs with T"),
+            bullet("C pairs with G"),
+
+            bodyText(
+              "These pairing rules are extremely important because they allow DNA to be copied accurately during replication.",
+            ),
+
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.red.shade50,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Text(
+                "Exam Tip: A always pairs with T, and C always pairs with G.",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 40),
+
+            const Text(
+              "Understanding DNA Bonds",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "To understand DNA replication, students must first understand the different bonds found in DNA.",
+            ),
+
+            const SizedBox(height: 20),
+
+            const Text(
+              "Hydrogen Bonds",
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "Hydrogen bonds hold the two DNA strands together by connecting complementary bases.",
+            ),
+
+            bullet("A pairs with T using 2 hydrogen bonds"),
+            bullet("C pairs with G using 3 hydrogen bonds"),
+
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.green.shade50,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Text(
+                "Remember: A-T = 2 hydrogen bonds, C-G = 3 hydrogen bonds.",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 20),
+
+            const Text(
+              "Calculating Hydrogen Bonds",
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "Example: A DNA molecule contains 100 A-T pairs and 50 C-G pairs.",
+            ),
+
+            bodyText(
+              "Hydrogen bonds = (100 × 2) + (50 × 3)",
+            ),
+
+            bodyText(
+              "= 200 + 150",
+            ),
+
+            bodyText(
+              "= 350 hydrogen bonds",
+            ),
+
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.blue.shade50,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Text(
+                "Formula: Hydrogen Bonds = (A-T pairs × 2) + (C-G pairs × 3)",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 25),
+
+            const Text(
+              "Phosphodiester Bonds",
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "Phosphodiester bonds connect nucleotides together along a single DNA strand, forming the sugar-phosphate backbone.",
+            ),
+
+            bodyText(
+              "If a strand contains n nucleotides, the number of phosphodiester bonds is always one less than the number of nucleotides.",
+            ),
+
+            bullet("10 nucleotides → 9 phosphodiester bonds"),
+            bullet("100 nucleotides → 99 phosphodiester bonds"),
+            bullet("1000 nucleotides → 999 phosphodiester bonds"),
+
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.orange.shade50,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Text(
+                "Formula: Phosphodiester Bonds = Number of Nucleotides − 1",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 25),
+
+            const Text(
+              "DNA Calculation Tricks",
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "Because DNA follows complementary base pairing, once you know one strand you automatically know the other.",
+            ),
+
+            bodyText(
+              "Example:",
+            ),
+
+            bodyText(
+              "If one strand contains:",
+            ),
+
+            bodyText(
+              "A A T G C",
+            ),
+
+            bodyText(
+              "The complementary strand must be:",
+            ),
+
+            bodyText(
+              "T T A C G",
+            ),
+
+            bullet("A pairs with T"),
+            bullet("T pairs with A"),
+            bullet("C pairs with G"),
+            bullet("G pairs with C"),
+
+            bodyText(
+              "This principle is the foundation of DNA replication.",
+            ),
+
+            const SizedBox(height: 20),
+
+            const Text(
+              "Chargaff's Rule",
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "Chargaff discovered that in double-stranded DNA:",
+            ),
+
+            bullet("Amount of A = Amount of T"),
+            bullet("Amount of C = Amount of G"),
+
+            bodyText(
+              "If a DNA molecule contains 30% Adenine, it must also contain 30% Thymine.",
+            ),
+
+            bodyText(
+              "This means 60% of the DNA is A + T.",
+            ),
+
+            bodyText(
+              "The remaining 40% must be C + G.",
+            ),
+
+            bodyText(
+              "Therefore:",
+            ),
+
+            bodyText(
+              "C = 20%",
+            ),
+
+            bodyText(
+              "G = 20%",
+            ),
+
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.red.shade50,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Text(
+                "Exam Tip: If you know one base percentage, you can calculate all the others.",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+
+            const SizedBox(height: 40),
+
+            const Text(
+              "DNA Replication",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "Before a cell divides, it must copy its DNA so that each daughter cell receives a complete set of genetic information. This copying process is called DNA replication.",
+            ),
+
+            bodyText(
+              "DNA replication occurs during the S phase of Interphase.",
+            ),
+
+            bullet("Occurs before cell division"),
+            bullet("Occurs during S phase"),
+            bullet("Produces two identical DNA molecules"),
+            bullet("Ensures genetic continuity"),
+
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.green.shade50,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Text(
+                "Exam Tip: DNA replication occurs during the S phase of Interphase.",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 30),
+
+            const Text(
+              "The Origin of Replication",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            topicImage("assets/Origin.png"),
+
+            bodyText(
+              "Replication does not begin randomly. It starts at specific DNA sequences called origins of replication.",
+            ),
+
+            bodyText(
+              "These origins act like starting points where replication machinery assembles.",
+            ),
+
+            bullet("Replication begins here"),
+            bullet("Special proteins recognize the origin"),
+            bullet("DNA starts opening at this location"),
+
+            bodyText(
+              "In eukaryotic chromosomes, there are many origins of replication. This allows large chromosomes to be copied more quickly.",
+            ),
+
+            const SizedBox(height: 30),
+
+            const Text(
+              "Step 1: Helicase Opens the DNA",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            topicImage("assets/Helicase_to_Ligase.png"),
+
+            bodyText(
+              "The first major enzyme involved in replication is helicase.",
+            ),
+
+            bodyText(
+              "Helicase breaks the hydrogen bonds between complementary base pairs.",
+            ),
+
+            bullet("Breaks hydrogen bonds"),
+            bullet("Separates DNA strands"),
+            bullet("Unwinds the double helix"),
+
+            bodyText(
+              "As helicase moves along the DNA molecule, a Y-shaped structure called a replication fork forms.",
+            ),
+
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.orange.shade50,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Text(
+                "Memory Trick: Helicase = DNA zipper opener.",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 25),
+
+            const Text(
+              "Step 2: Complementary Bases Pair",
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "Once the strands separate, each original strand acts as a template for building a new strand.",
+            ),
+
+            bodyText(
+              "Free nucleotides in the nucleus move into position according to complementary base-pairing rules.",
+            ),
+
+            bullet("A pairs with T"),
+            bullet("T pairs with A"),
+            bullet("C pairs with G"),
+            bullet("G pairs with C"),
+
+            bodyText(
+              "The sequence on the original strand determines the sequence on the newly forming strand.",
+            ),
+
+            const SizedBox(height: 25),
+
+            const Text(
+              "Step 3: DNA Polymerase Builds New DNA",
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "DNA Polymerase is the enzyme responsible for adding nucleotides to the growing DNA strand.",
+            ),
+
+            bullet("Adds nucleotides"),
+            bullet("Builds new DNA strands"),
+            bullet("Works using complementary base pairing"),
+
+            bodyText(
+              "DNA Polymerase moves along the template strand and joins nucleotides together using phosphodiester bonds.",
+            ),
+
+            bodyText(
+              "As a result, two complete DNA molecules gradually form.",
+            ),
+
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.blue.shade50,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Text(
+                "Exam Tip: Helicase opens DNA, DNA Polymerase builds DNA.",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 40),
+
+            const Text(
+              "Protecting the Open DNA Strands",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "Once helicase separates the two DNA strands, the strands naturally tend to rejoin because complementary bases attract one another.",
+            ),
+
+            bodyText(
+              "If the strands rejoined immediately, replication could not continue.",
+            ),
+
+            bodyText(
+              "To prevent this problem, special proteins called Single-Stranded Binding Proteins (SSBs) attach to the exposed DNA strands.",
+            ),
+
+            bullet("Bind to separated DNA strands"),
+            bullet("Prevent strands from rejoining"),
+            bullet("Protect DNA from damage"),
+            bullet("Keep DNA accessible for replication"),
+
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.orange.shade50,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Text(
+                "Think of SSB proteins as clips holding the DNA strands apart while replication takes place.",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 30),
+
+            const Text(
+              "Why Replication Is Not The Same On Both Strands",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "DNA Polymerase can only build new DNA in one direction: from 5' to 3'.",
+            ),
+
+            bodyText(
+              "Because the two template strands run in opposite directions, replication cannot occur identically on both strands.",
+            ),
+
+            bodyText(
+              "As a result, one strand is synthesized continuously while the other is synthesized in small fragments.",
+            ),
+
+            const SizedBox(height: 20),
+
+            const Text(
+              "Leading Strand",
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "The leading strand is synthesized continuously in the same direction as the movement of the replication fork.",
+            ),
+
+            bullet("Continuous synthesis"),
+            bullet("Requires fewer interruptions"),
+            bullet("Built smoothly by DNA Polymerase"),
+
+            const SizedBox(height: 20),
+
+            const Text(
+              "Lagging Strand",
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "The lagging strand cannot be synthesized continuously because of DNA Polymerase's directional limitation.",
+            ),
+
+            bodyText(
+              "Instead, it is built in short sections called Okazaki fragments.",
+            ),
+
+            bullet("Discontinuous synthesis"),
+            bullet("Produced in fragments"),
+            bullet("Forms Okazaki fragments"),
+
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.blue.shade50,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Text(
+                "Exam Tip: Leading strand = continuous. Lagging strand = discontinuous.",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 30),
+
+            const Text(
+              "Okazaki Fragments",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "Okazaki fragments are short DNA segments produced on the lagging strand during replication.",
+            ),
+
+            bodyText(
+              "Each fragment is synthesized separately and must later be joined together.",
+            ),
+
+            bullet("Found only on the lagging strand"),
+            bullet("Produced during discontinuous synthesis"),
+            bullet("Must be connected together"),
+
+            const SizedBox(height: 20),
+
+            const Text(
+              "DNA Ligase",
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "DNA Ligase is the enzyme responsible for joining Okazaki fragments together.",
+            ),
+
+            bodyText(
+              "Ligase seals the gaps between fragments by forming phosphodiester bonds.",
+            ),
+
+            bullet("Joins Okazaki fragments"),
+            bullet("Forms phosphodiester bonds"),
+            bullet("Completes the lagging strand"),
+
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.green.shade50,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Text(
+                "Memory Trick: Ligase = Glue of DNA replication.",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 30),
+
+            const Text(
+              "Semi-Discontinuous Replication",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "DNA replication is often described as semi-discontinuous because the two strands are copied differently.",
+            ),
+
+            bullet("Leading strand = continuous"),
+            bullet("Lagging strand = discontinuous"),
+
+            bodyText(
+              "Since one strand is synthesized continuously and the other discontinuously, replication is neither completely continuous nor completely discontinuous.",
+            ),
+
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.red.shade50,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Text(
+                "Exam Tip: DNA replication is semi-discontinuous because only the lagging strand forms Okazaki fragments.",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 40),
+
+            const Text(
+              "Semi-Conservative Replication",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "When DNA replication finishes, two DNA molecules are produced. A key question scientists once asked was: how much of the original DNA is retained in the new molecules?",
+            ),
+
+            bodyText(
+              "Experiments showed that DNA replication is semi-conservative.",
+            ),
+
+            bodyText(
+              "Semi-conservative means that each new DNA molecule contains:",
+            ),
+
+            bullet("One original (parental) strand"),
+            bullet("One newly synthesized strand"),
+
+            bodyText(
+              "In other words, half of the original DNA molecule is conserved in each daughter DNA molecule.",
+            ),
+
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.green.shade50,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Text(
+                "Exam Tip: Semi-conservative replication means each daughter DNA molecule contains one old strand and one new strand.",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 30),
+
+            const Text(
+              "Why DNA Replication Must Be Accurate",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "Human DNA contains billions of base pairs. Even a small number of copying mistakes could have serious consequences for cells.",
+            ),
+
+            bodyText(
+              "Therefore cells possess mechanisms that greatly reduce errors during DNA replication.",
+            ),
+
+            bullet("Incorrect bases must be detected"),
+            bullet("Errors must be corrected"),
+            bullet("Genetic information must be preserved"),
+
+            bodyText(
+              "Without these mechanisms, mutations would accumulate rapidly and many cells would stop functioning properly.",
+            ),
+
+            const SizedBox(height: 30),
+
+            const Text(
+              "Proofreading",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            topicImage("assets/Proofreading.png"),
+
+            bodyText(
+              "DNA Polymerase does more than simply add nucleotides. It also checks its own work through a process called proofreading.",
+            ),
+
+            bodyText(
+              "As DNA Polymerase moves along the DNA strand, it continuously checks whether the correct base has been added.",
+            ),
+
+            bullet("Checks newly added nucleotides"),
+            bullet("Detects incorrect base pairing"),
+            bullet("Removes mistakes"),
+            bullet("Replaces incorrect bases"),
+
+            bodyText(
+              "For example, if a G is mistakenly inserted opposite an A, DNA Polymerase can detect the error, remove the incorrect nucleotide and replace it with the correct one.",
+            ),
+
+            bodyText(
+              "This proofreading process dramatically reduces the number of mutations that occur during replication.",
+            ),
+
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.orange.shade50,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Text(
+                "Memory Trick: DNA Polymerase is both the builder and the editor of DNA.",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 30),
+
+            const Text(
+              "Telomeres",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            topicImage("assets/Telomere_Telomerase.png"),
+
+            bodyText(
+              "Linear chromosomes have a special problem. Each time DNA replication occurs, a small portion at the end of the chromosome cannot be copied completely.",
+            ),
+
+            bodyText(
+              "If important genes were located at chromosome ends, genetic information would be lost during every cell division.",
+            ),
+
+            bodyText(
+              "To prevent this, chromosomes contain protective regions called telomeres.",
+            ),
+
+            bullet("Found at chromosome ends"),
+            bullet("Contain repetitive DNA sequences"),
+            bullet("Protect important genes"),
+            bullet("Act as protective buffers"),
+
+            bodyText(
+              "Telomeres can be compared to the plastic tips found at the ends of shoelaces. Just as the plastic tip prevents a shoelace from fraying, telomeres protect chromosomes from deterioration.",
+            ),
+
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.blue.shade50,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Text(
+                "Think of telomeres as chromosome protection caps.",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 25),
+
+            const Text(
+              "Telomerase",
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "Telomerase is an enzyme that helps maintain telomeres.",
+            ),
+
+            bodyText(
+              "It adds additional DNA sequences to chromosome ends, helping compensate for DNA that is lost during replication.",
+            ),
+
+            bullet("Extends telomeres"),
+            bullet("Protects chromosome ends"),
+            bullet("Reduces loss of genetic information"),
+
+            bodyText(
+              "Telomerase is highly active in stem cells, reproductive cells and many cancer cells.",
+            ),
+
+            bodyText(
+              "Most ordinary body cells have little or no telomerase activity, which is one reason why telomeres gradually shorten as people age.",
+            ),
+
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.red.shade50,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Text(
+                "Exam Tip: Telomeres protect chromosome ends, while telomerase helps rebuild and maintain telomeres.",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 40),
+
+            const Text(
+              "DNA Calculation Masterclass",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "DNA calculations are common in tests and exams. Fortunately, most DNA calculations follow a few simple rules.",
+            ),
+
+            const SizedBox(height: 20),
+
+            const Text(
+              "Calculation 1: Complementary DNA Strands",
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "Example:",
+            ),
+
+            bodyText(
+              "Original Strand:",
+            ),
+
+            bodyText(
+              "A T G C C A T G",
+            ),
+
+            bodyText(
+              "Complementary Strand:",
+            ),
+
+            bodyText(
+              "T A C G G T A C",
+            ),
+
+            bodyText(
+              "Always remember:",
+            ),
+
+            bullet("A pairs with T"),
+            bullet("T pairs with A"),
+            bullet("C pairs with G"),
+            bullet("G pairs with C"),
+
+            const SizedBox(height: 25),
+
+            const Text(
+              "Calculation 2: Hydrogen Bonds",
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "A-T pairs form 2 hydrogen bonds.",
+            ),
+
+            bodyText(
+              "C-G pairs form 3 hydrogen bonds.",
+            ),
+
+            bodyText(
+              "Example:",
+            ),
+
+            bodyText(
+              "DNA contains:",
+            ),
+
+            bullet("120 A-T pairs"),
+            bullet("80 C-G pairs"),
+
+            bodyText(
+              "Hydrogen Bonds = (120 × 2) + (80 × 3)",
+            ),
+
+            bodyText(
+              "= 240 + 240",
+            ),
+
+            bodyText(
+              "= 480 Hydrogen Bonds",
+            ),
+
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.green.shade50,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Text(
+                "Formula: (A-T × 2) + (C-G × 3)",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 25),
+
+            const Text(
+              "Calculation 3: Phosphodiester Bonds",
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "Phosphodiester bonds connect neighbouring nucleotides within a DNA strand.",
+            ),
+
+            bodyText(
+              "The number of phosphodiester bonds is always one less than the number of nucleotides in a strand.",
+            ),
+
+            bodyText(
+              "Example:",
+            ),
+
+            bodyText(
+              "If a strand contains 500 nucleotides:",
+            ),
+
+            bodyText(
+              "Phosphodiester Bonds = 500 − 1",
+            ),
+
+            bodyText(
+              "= 499",
+            ),
+
+            bodyText("Caution: On one strand not both strands, then on both strands you substract 2 and not 1.",),
+
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.orange.shade50,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Text(
+                "Formula: Number of Nucleotides − 1",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 25),
+
+            const Text(
+              "Calculation 4: Chargaff's Rule",
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "In double-stranded DNA:",
+            ),
+
+            bullet("A = T"),
+            bullet("C = G"),
+
+            bodyText(
+              "Example:",
+            ),
+
+            bodyText(
+              "If Adenine = 35%",
+            ),
+
+            bodyText(
+              "Then Thymine = 35%",
+            ),
+
+            bodyText(
+              "Total A + T = 70%",
+            ),
+
+            bodyText(
+              "Remaining = 30%",
+            ),
+
+            bodyText(
+              "Therefore:",
+            ),
+
+            bodyText(
+              "Cytosine = 15%",
+            ),
+
+            bodyText(
+              "Guanine = 15%",
+            ),
+
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.blue.shade50,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Text(
+                "Exam Tip: Once you know one base percentage, you can calculate all the others.",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 30),
+
+            const Text(
+              "Big Picture Summary of DNA Replication",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "DNA replication begins at origins of replication. Helicase opens the DNA double helix by breaking hydrogen bonds. Single-Stranded Binding Proteins keep the strands apart. DNA Polymerase builds new strands using complementary base pairing. The leading strand is synthesized continuously, while the lagging strand is synthesized discontinuously as Okazaki fragments. DNA Ligase joins these fragments together. DNA Polymerase proofreads the new DNA to reduce errors. The final result is two identical DNA molecules produced through semi-conservative replication.",
+            ),
+
+            Container(
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: Colors.green.shade50,
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: const Text(
+                "If you understand origins, helicase, SSB proteins, DNA polymerase, leading strand, lagging strand, Okazaki fragments, ligase, proofreading, telomeres and telomerase, then you understand DNA replication.",
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  height: 1.5,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 40),
+
+            const Text(
+              "Exam Essentials",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            const SizedBox(height: 15),
+
+            Card(
+              child: Padding(
+                padding: EdgeInsets.all(16),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+
+                    Text("• DNA is the hereditary material."),
+                    Text("• DNA stands for Deoxyribonucleic Acid."),
+                    Text("• DNA has a double-helix structure."),
+                    Text("• A pairs with T."),
+                    Text("• C pairs with G."),
+                    Text("• A-T has 2 hydrogen bonds."),
+                    Text("• C-G has 3 hydrogen bonds."),
+                    Text("• DNA replication occurs during S phase."),
+                    Text("• Replication begins at origins of replication."),
+                    Text("• Helicase breaks hydrogen bonds."),
+                    Text("• SSB proteins keep strands apart."),
+                    Text("• DNA Polymerase builds new DNA."),
+                    Text("• DNA Polymerase proofreads DNA."),
+                    Text("• Leading strand is continuous."),
+                    Text("• Lagging strand is discontinuous."),
+                    Text("• Okazaki fragments occur on the lagging strand."),
+                    Text("• DNA Ligase joins Okazaki fragments."),
+                    Text("• Replication is semi-discontinuous."),
+                    Text("• Replication is semi-conservative."),
+                    Text("• Telomeres protect chromosome ends."),
+                    Text("• Telomerase maintains telomeres."),
+                    Text("• Chargaff's Rule: A=T and C=G."),
+
+                  ],
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 30),
+
+            const Text(
+              "Practice Questions",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            const SizedBox(height: 15),
+
+            Card(
+              child: Padding(
+                padding: EdgeInsets.all(16),
+                child: Text(
+                  "1. Define heredity.\n\n"
+                      "2. Why is DNA important?\n\n"
+                      "3. What does DNA stand for?\n\n"
+                      "4. Describe the structure of DNA.\n\n"
+                      "5. Name the four nitrogenous bases.\n\n"
+                      "6. State the complementary base-pairing rules.\n\n"
+                      "7. How many hydrogen bonds occur between A and T?\n\n"
+                      "8. How many hydrogen bonds occur between C and G?\n\n"
+                      "9. What is the function of helicase?\n\n"
+                      "10. What is the function of Single-Stranded Binding Proteins?\n\n"
+                      "11. What is the function of DNA Polymerase?\n\n"
+                      "12. What is the function of DNA Ligase?\n\n"
+                      "13. What are Okazaki fragments?\n\n"
+                      "14. Distinguish between the leading and lagging strands.\n\n"
+                      "15. Why is replication described as semi-discontinuous?\n\n"
+                      "16. Why is replication described as semi-conservative?\n\n"
+                      "17. What is proofreading?\n\n"
+                      "18. What are telomeres?\n\n"
+                      "19. What is telomerase?\n\n"
+                      "20. State Chargaff's Rule.\n\n"
+                      "21. Calculate the number of hydrogen bonds in a DNA molecule containing 100 A-T pairs and 50 C-G pairs.\n\n"
+                      "22. A DNA molecule contains 30% Adenine. Calculate the percentages of T, C and G.",
+                  style: TextStyle(
+                    fontSize: 16,
+                    height: 1.6,
+                  ),
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 30),
+
+            const Text(
+              "Suggested Answers",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            const SizedBox(height: 15),
+
+            Card(
+              child: Padding(
+                padding: EdgeInsets.all(16),
+                child: Text(
+                  "1. The passing of genetic information from parents to offspring.\n\n"
+                      "2. It stores genetic information and controls cell activities.\n\n"
+                      "3. Deoxyribonucleic Acid.\n\n"
+                      "4. A double helix consisting of two strands.\n\n"
+                      "5. Adenine, Thymine, Cytosine and Guanine.\n\n"
+                      "6. A pairs with T and C pairs with G.\n\n"
+                      "7. Two.\n\n"
+                      "8. Three.\n\n"
+                      "9. Unwinds DNA and breaks hydrogen bonds.\n\n"
+                      "10. They keep DNA strands separated.\n\n"
+                      "11. Builds new DNA and proofreads it.\n\n"
+                      "12. Joins Okazaki fragments.\n\n"
+                      "13. Short DNA fragments on the lagging strand.\n\n"
+                      "14. Leading is continuous, lagging is discontinuous.\n\n"
+                      "15. One strand is continuous and the other discontinuous.\n\n"
+                      "16. Each new DNA molecule contains one old strand and one new strand.\n\n"
+                      "17. Error-checking during DNA replication.\n\n"
+                      "18. Protective DNA sequences at chromosome ends.\n\n"
+                      "19. An enzyme that maintains telomeres.\n\n"
+                      "20. A=T and C=G.\n\n"
+                      "21. (100 × 2) + (50 × 3) = 350 hydrogen bonds.\n\n"
+                      "22. T = 30%, C = 20%, G = 20%.",
+                  style: TextStyle(
+                    fontSize: 16,
+                    height: 1.6,
+                  ),
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 30),
+
+            Container(
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: Colors.blue.shade50,
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: const Text(
+                "Congratulations! You have completed DNA and Heredity. You should now understand DNA structure, DNA replication, complementary base pairing, DNA calculations, proofreading, telomeres and how genetic information is accurately passed from one generation to the next.",
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  height: 1.6,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 50),
+
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+
+class GeneExpressionAndMutationPage extends StatelessWidget {
+  const GeneExpressionAndMutationPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Gene Expression and Mutation"),
+      ),
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+
+            const Text(
+              "Gene Expression and Mutation",
+              style: TextStyle(
+                fontSize: 28,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            const SizedBox(height: 20),
+
+            bodyText(
+              "Every cell in the body contains DNA, but DNA itself does not perform cellular functions. Instead, DNA contains instructions for building proteins, and proteins perform most of the work inside cells.",
+            ),
+
+            bodyText(
+              "Gene expression is the process by which information stored in DNA is used to produce functional proteins.",
+            ),
+
+            bullet("DNA stores information"),
+            bullet("RNA carries information"),
+            bullet("Proteins perform cellular functions"),
+
+            bodyText(
+              "Gene expression allows cells to use genetic information when it is needed.",
+            ),
+
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.green.shade50,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Text(
+                "Gene Expression = Using DNA information to make proteins.",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 30),
+
+            const Text(
+              "Genes",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "A gene is a specific segment of DNA that contains instructions for producing a particular protein or functional RNA molecule.",
+            ),
+
+            bodyText(
+              "Different genes contain different instructions.",
+            ),
+
+            bullet("One gene may code for insulin"),
+            bullet("Another gene may code for haemoglobin"),
+            bullet("Different genes produce different proteins"),
+
+            bodyText(
+              "The sequence of bases in a gene determines the amino acid sequence of the protein that will eventually be produced.",
+            ),
+
+            const SizedBox(height: 30),
+
+            const Text(
+              "The Central Dogma of Molecular Biology",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "The Central Dogma describes the flow of genetic information within cells.",
+            ),
+
+            bodyText(
+              "Information flows in the following direction:",
+            ),
+
+            Container(
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: Colors.blue.shade50,
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: const Center(
+                child: Text(
+                  "DNA → RNA → Protein",
+                  style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ),
+
+            bodyText(
+              "DNA stores information. RNA carries the information. Proteins are produced from that information.",
+            ),
+
+            bullet("DNA → Transcription → RNA"),
+            bullet("RNA → Translation → Protein"),
+
+            bodyText(
+              "The entire process of gene expression can therefore be divided into two major stages:",
+            ),
+
+            bullet("Transcription"),
+            bullet("Translation"),
+
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.orange.shade50,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Text(
+                "Exam Tip: The Central Dogma is DNA → RNA → Protein.",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 30),
+
+            const Text(
+              "Overview of Transcription and Translation",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            topicImage("assets/Transcription_until_Proteins.png"),
+
+            bodyText(
+              "During transcription, a gene's DNA sequence is copied into RNA.",
+            ),
+
+            bodyText(
+              "During translation, the RNA sequence is used to build a protein.",
+            ),
+
+            bodyText(
+              "Together, these two processes convert genetic information into a functional protein.",
+            ),
+
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.red.shade50,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Text(
+                "Think of DNA as a recipe book, RNA as a copied recipe and the protein as the finished meal.",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 40),
+
+            const Text(
+              "Transcription",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "Transcription is the process by which information stored in DNA is copied into messenger RNA (mRNA).",
+            ),
+
+            bodyText(
+              "Transcription occurs inside the nucleus in eukaryotic cells.",
+            ),
+
+            bullet("Uses DNA as a template"),
+            bullet("Produces mRNA"),
+            bullet("Occurs in the nucleus"),
+
+            topicImage("assets/Initiators_Promoters.png"),
+
+            const SizedBox(height: 20),
+
+            const Text(
+              "The Parts Needed For Transcription",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "Before transcription can begin, the cell must identify exactly where a gene starts and where it ends.",
+            ),
+
+            bodyText(
+              "Several important DNA regions and proteins work together to ensure that the correct gene is copied.",
+            ),
+
+            const SizedBox(height: 20),
+
+            const Text(
+              "Initiator",
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "The initiator is a DNA sequence located near the beginning of a gene.",
+            ),
+
+            bodyText(
+              "It helps recruit proteins that are needed to start transcription.",
+            ),
+
+            bullet("Helps start transcription"),
+            bullet("Located near the beginning of a gene"),
+            bullet("Assists assembly of transcription machinery"),
+
+            const SizedBox(height: 20),
+
+            const Text(
+              "Promoter",
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "The promoter is a special DNA region where RNA Polymerase binds.",
+            ),
+
+            bodyText(
+              "You can think of the promoter as the 'start here' sign for transcription.",
+            ),
+
+            bullet("RNA Polymerase binds here"),
+            bullet("Marks the beginning of transcription"),
+            bullet("Controls whether a gene is expressed"),
+
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.green.shade50,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Text(
+                "Exam Tip: RNA Polymerase binds to the promoter.",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 20),
+
+            const Text(
+              "RNA Polymerase",
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "RNA Polymerase is the enzyme responsible for building RNA.",
+            ),
+
+            bodyText(
+              "Its job is similar to DNA Polymerase during replication, except that it builds RNA instead of DNA.",
+            ),
+
+            bullet("Reads DNA"),
+            bullet("Builds RNA"),
+            bullet("Moves along the gene"),
+            bullet("Links RNA nucleotides together"),
+
+            const SizedBox(height: 30),
+
+            const Text(
+              "Template Strand vs Coding Strand",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "Only one DNA strand is actually used during transcription.",
+            ),
+
+            bodyText(
+              "The strand used by RNA Polymerase is called the template strand.",
+            ),
+
+            bullet("Template strand = used to build RNA"),
+            bullet("Read directly by RNA Polymerase"),
+
+            bodyText(
+              "The other strand is called the coding strand.",
+            ),
+
+            bullet("Coding strand is not directly read"),
+            bullet("Has almost the same sequence as mRNA"),
+
+            bodyText(
+              "The only difference is that DNA contains Thymine (T) while RNA contains Uracil (U).",
+            ),
+
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.orange.shade50,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Text(
+                "Important: mRNA matches the coding strand except that U replaces T.",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 30),
+
+            const Text(
+              "Building mRNA",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "As RNA Polymerase moves along the template strand, RNA nucleotides pair with exposed DNA bases.",
+            ),
+
+            bodyText(
+              "RNA uses slightly different base-pairing rules because RNA contains Uracil instead of Thymine.",
+            ),
+
+            bullet("DNA A pairs with RNA U"),
+            bullet("DNA T pairs with RNA A"),
+            bullet("DNA C pairs with RNA G"),
+            bullet("DNA G pairs with RNA C"),
+
+            bodyText(
+              "The growing RNA strand therefore becomes complementary to the DNA template strand.",
+            ),
+
+            const SizedBox(height: 20),
+
+            const Text(
+              "Example",
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "Template DNA:",
+            ),
+
+            bodyText(
+              "A T G C C A",
+            ),
+
+            bodyText(
+              "mRNA Produced:",
+            ),
+
+            bodyText(
+              "U A C G G U",
+            ),
+
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.blue.shade50,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Text(
+                "Exam Tip: RNA contains U (Uracil) instead of T (Thymine).",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 30),
+
+            const Text(
+              "Terminator",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "The terminator is a DNA sequence that signals the end of transcription.",
+            ),
+
+            bodyText(
+              "When RNA Polymerase reaches the terminator, transcription stops and the newly formed RNA molecule is released.",
+            ),
+
+            bullet("Stops transcription"),
+            bullet("Marks the end of a gene"),
+            bullet("Causes RNA release"),
+
+            bodyText(
+              "The completed RNA molecule is called a primary transcript (pre-mRNA).",
+            ),
+
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.red.shade50,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Text(
+                "Transcription Summary: Promoter → RNA Polymerase binds → RNA is built → Terminator stops transcription.",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 40),
+
+            const Text(
+              "RNA Processing",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "When transcription finishes, the RNA molecule that is produced is called pre-mRNA (precursor mRNA).",
+            ),
+
+            bodyText(
+              "Pre-mRNA cannot immediately be used for protein synthesis. It must first undergo several modifications inside the nucleus.",
+            ),
+
+            bullet("5' Cap added"),
+            bullet("Poly-A Tail added"),
+            bullet("Introns removed"),
+            bullet("Exons joined together"),
+
+            bodyText(
+              "These modifications transform pre-mRNA into mature mRNA that can leave the nucleus and be translated.",
+            ),
+
+            const SizedBox(height: 30),
+
+            const Text(
+              "Introns and Exons",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "Not all parts of a gene contain useful protein-coding information.",
+            ),
+
+            bodyText(
+              "Genes contain two important types of sequences:",
+            ),
+
+            const Text(
+              "Exons",
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bullet("Contain useful coding information"),
+            bullet("Remain in mature mRNA"),
+            bullet("Used to build proteins"),
+
+            const SizedBox(height: 15),
+
+            const Text(
+              "Introns",
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bullet("Non-coding regions"),
+            bullet("Removed before translation"),
+            bullet("Do not contribute directly to the final protein"),
+
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.green.shade50,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Text(
+                "Memory Trick: EXons EXIT the nucleus. INtrons stay IN and are removed.",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 30),
+
+            const Text(
+              "RNA Splicing",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "RNA splicing is the process that removes introns and joins exons together.",
+            ),
+
+            bodyText(
+              "Special protein-RNA complexes called spliceosomes perform this task.",
+            ),
+
+            bullet("Introns removed"),
+            bullet("Exons joined"),
+            bullet("Produces mature mRNA"),
+
+            bodyText(
+              "Without splicing, the ribosome would read unnecessary sequences and produce incorrect proteins.",
+            ),
+
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.orange.shade50,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Text(
+                "Exam Tip: Splicing removes introns and joins exons.",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 30),
+
+            const Text(
+              "The 5' Cap",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "A modified guanine nucleotide is added to the 5' end of the mRNA molecule.",
+            ),
+
+            bodyText(
+              "This structure is called the 5' Cap.",
+            ),
+
+            bodyText(
+              "The 5' Cap has several important functions.",
+            ),
+
+            bullet("Protects mRNA from degradation"),
+            bullet("Helps ribosomes recognize mRNA"),
+            bullet("Assists export from the nucleus"),
+
+            bodyText(
+              "Without a 5' Cap, mRNA molecules would be much less stable and translation would be inefficient.",
+            ),
+
+            const SizedBox(height: 30),
+
+            const Text(
+              "The Poly-A Tail",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "A long sequence of adenine nucleotides is added to the 3' end of the mRNA molecule.",
+            ),
+
+            bodyText(
+              "This structure is called the Poly-A Tail.",
+            ),
+
+            bodyText(
+              "The Poly-A Tail performs several important functions.",
+            ),
+
+            bullet("Protects mRNA from breakdown"),
+            bullet("Increases mRNA stability"),
+            bullet("Assists transport from nucleus"),
+            bullet("Improves translation efficiency"),
+
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.blue.shade50,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Text(
+                "5' Cap protects the front of mRNA. Poly-A Tail protects the back of mRNA.",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 30),
+
+            const Text(
+              "Mature mRNA",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "After splicing, 5' capping and Poly-A tail addition, the mature mRNA is complete.",
+            ),
+
+            bullet("Contains only exons"),
+            bullet("Has a 5' Cap"),
+            bullet("Has a Poly-A Tail"),
+            bullet("Ready for translation"),
+
+            bodyText(
+              "The mature mRNA now leaves the nucleus through nuclear pores and travels to ribosomes in the cytoplasm.",
+            ),
+
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.red.shade50,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Text(
+                "Flow So Far: DNA → Transcription → pre-mRNA → RNA Processing → Mature mRNA → Translation.",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 40),
+
+            const Text(
+              "Translation",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "Translation is the process by which the information stored in mRNA is used to build a protein.",
+            ),
+
+            bodyText(
+              "Translation occurs on ribosomes in the cytoplasm.",
+            ),
+
+            bodyText(
+              "During translation, the language of nucleotides is converted into the language of amino acids.",
+            ),
+
+            bullet("Uses mRNA"),
+            bullet("Occurs on ribosomes"),
+            bullet("Produces proteins"),
+            bullet("Uses amino acids"),
+
+            topicImage("assets/Transcription_until_Protein.png"),
+
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.green.shade50,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Text(
+                "Translation = Converting the message in mRNA into a protein.",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 30),
+
+            const Text(
+              "Codons",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "The genetic code is read in groups of three nucleotides called codons.",
+            ),
+
+            bodyText(
+              "Each codon specifies a particular amino acid.",
+            ),
+
+            bodyText(
+              "Example:",
+            ),
+
+            bullet("AUG = Methionine"),
+            bullet("UUU = Phenylalanine"),
+            bullet("GCU = Alanine"),
+
+            bodyText(
+              "Because there are four possible bases and codons contain three positions, there are 64 possible codons.",
+            ),
+
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.orange.shade50,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Text(
+                "Exam Tip: A codon consists of 3 mRNA nucleotides.",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 30),
+
+            const Text(
+              "Transfer RNA (tRNA)",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "Transfer RNA acts as an adaptor molecule between mRNA and amino acids.",
+            ),
+
+            bodyText(
+              "Each tRNA carries a specific amino acid and delivers it to the ribosome.",
+            ),
+
+            bullet("Carries amino acids"),
+            bullet("Recognises codons"),
+            bullet("Contains an anticodon"),
+
+            bodyText(
+              "The anticodon is a three-base sequence complementary to an mRNA codon.",
+            ),
+
+            bodyText(
+              "Example:",
+            ),
+
+            bodyText(
+              "mRNA Codon: AUG",
+            ),
+
+            bodyText(
+              "tRNA Anticodon: UAC",
+            ),
+
+            const SizedBox(height: 30),
+
+            const Text(
+              "Aminoacyl-tRNA Synthetase",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "Before translation can occur, amino acids must be attached to their correct tRNA molecules.",
+            ),
+
+            bodyText(
+              "This task is performed by Aminoacyl-tRNA Synthetase.",
+            ),
+
+            bullet("Attaches amino acids to tRNA"),
+            bullet("Ensures correct matching"),
+            bullet("Critical for translation accuracy"),
+
+            bodyText(
+              "If the wrong amino acid is attached, the wrong protein could be produced.",
+            ),
+
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.blue.shade50,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Text(
+                "Aminoacyl-tRNA Synthetase = The enzyme that loads amino acids onto tRNA.",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 30),
+
+            const Text(
+              "Ribosomes",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "Ribosomes are the structures where proteins are assembled.",
+            ),
+
+            bodyText(
+              "Ribosomes consist of ribosomal RNA (rRNA) and proteins.",
+            ),
+
+            bullet("Site of translation"),
+            bullet("Read mRNA"),
+            bullet("Join amino acids together"),
+
+            bodyText(
+              "Ribosomes move along mRNA one codon at a time while building a protein.",
+            ),
+
+            const SizedBox(height: 20),
+
+            const Text(
+              "The Three Ribosome Sites",
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "Ribosomes contain three important binding sites for tRNA molecules.",
+            ),
+
+            const Text(
+              "A Site (Aminoacyl Site)",
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bullet("Entry site"),
+            bullet("Incoming tRNA arrives here"),
+
+            const Text(
+              "P Site (Peptidyl Site)",
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bullet("Holds growing protein chain"),
+            bullet("Peptide bond formation occurs here"),
+
+            const Text(
+              "E Site (Exit Site)",
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bullet("Used tRNA leaves here"),
+
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.red.shade50,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Text(
+                "Memory Trick: A = Arrive, P = Protein, E = Exit.",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 30),
+
+            const Text(
+              "Wobble Hypothesis",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "Scientists discovered that some tRNA molecules can recognise more than one codon.",
+            ),
+
+            bodyText(
+              "This occurs because the third base of a codon is often less strict in its pairing requirements.",
+            ),
+
+            bodyText(
+              "This flexibility is called wobble.",
+            ),
+
+            bullet("Occurs at the third codon position"),
+            bullet("Allows one tRNA to recognise multiple codons"),
+            bullet("Reduces the number of different tRNAs required"),
+
+            bodyText(
+              "For example, two codons that differ only in the third position may still be recognised by the same tRNA.",
+            ),
+
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.orange.shade50,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Text(
+                "Exam Tip: Wobble occurs at the third base of the codon and allows one tRNA to recognise multiple codons.",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 40),
+
+            const Text(
+              "The Three Phases of Translation",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "Translation occurs in three major phases: Initiation, Elongation and Termination.",
+            ),
+
+            const SizedBox(height: 30),
+
+            const Text(
+              "1. Initiation",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "Initiation is the stage where the ribosome assembles around the mRNA and prepares to begin protein synthesis.",
+            ),
+
+            bodyText(
+              "Translation usually begins at the start codon AUG.",
+            ),
+
+            bullet("mRNA binds to the small ribosomal subunit"),
+            bullet("Start codon AUG is identified"),
+            bullet("Initiator tRNA carrying Methionine binds"),
+            bullet("Large ribosomal subunit joins"),
+
+            bodyText(
+              "Methionine is usually the first amino acid added to a newly forming protein.",
+            ),
+
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.green.shade50,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Text(
+                "Exam Tip: AUG is the start codon and codes for Methionine.",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 30),
+
+            const Text(
+              "2. Elongation",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "Elongation is the stage where amino acids are added one after another to the growing protein chain.",
+            ),
+
+            bodyText(
+              "This stage repeats many times until the protein is completed.",
+            ),
+
+            bodyText(
+              "The process follows a repeating cycle:",
+            ),
+
+            bullet("New tRNA enters the A site"),
+            bullet("Codon and anticodon pair"),
+            bullet("Peptide bond forms"),
+            bullet("Protein chain transfers to new amino acid"),
+            bullet("Ribosome moves forward"),
+            bullet("Used tRNA exits through E site"),
+
+            bodyText(
+              "As elongation continues, the protein becomes longer and longer.",
+            ),
+
+            const SizedBox(height: 20),
+
+            const Text(
+              "Peptide Bonds",
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "Amino acids are connected together by peptide bonds.",
+            ),
+
+            bodyText(
+              "These peptide bonds create a polypeptide chain that eventually folds into a functional protein.",
+            ),
+
+            bullet("Connect amino acids"),
+            bullet("Form proteins"),
+            bullet("Created by ribosomal activity"),
+
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.orange.shade50,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Text(
+                "A protein is simply a long chain of amino acids connected by peptide bonds.",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 30),
+
+            const Text(
+              "3. Termination",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "Termination occurs when the ribosome reaches a stop codon.",
+            ),
+
+            bodyText(
+              "Unlike normal codons, stop codons do not code for amino acids.",
+            ),
+
+            bodyText(
+              "The three stop codons are:",
+            ),
+
+            bullet("UAA"),
+            bullet("UAG"),
+            bullet("UGA"),
+
+            bodyText(
+              "When a stop codon enters the A site, release factors bind instead of tRNA molecules.",
+            ),
+
+            bullet("Protein is released"),
+            bullet("Ribosome disassembles"),
+            bullet("Translation ends"),
+
+            bodyText(
+              "The newly synthesized protein can now fold into its functional three-dimensional structure.",
+            ),
+
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.red.shade50,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Text(
+                "Translation ends when a stop codon is reached.",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 30),
+
+            const Text(
+              "Translation Summary",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "During initiation the ribosome assembles on mRNA. During elongation amino acids are added to the growing protein chain. During termination a stop codon signals the end of protein synthesis and the completed protein is released.",
+            ),
+
+            Container(
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: Colors.blue.shade50,
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: const Text(
+                "Initiation → Elongation → Termination = Complete Protein Synthesis",
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 40),
+
+            const Text(
+              "Mutations",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "A mutation is a permanent change in the nucleotide sequence of DNA.",
+            ),
+
+            bodyText(
+              "Mutations may affect a single nucleotide, an entire gene or even whole chromosomes.",
+            ),
+
+            bodyText(
+              "Some mutations have no effect, some are harmful and some may even be beneficial.",
+            ),
+
+            bullet("Can change DNA sequence"),
+            bullet("Can alter proteins"),
+            bullet("Can cause diseases"),
+            bullet("Can create genetic variation"),
+
+            topicImage("assets/Types_of_Mutation.png"),
+
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.green.shade50,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Text(
+                "Mutation = Permanent change in DNA sequence.",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 30),
+
+            const Text(
+              "Causes of Mutations",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "Mutations may occur naturally or be caused by environmental factors called mutagens.",
+            ),
+
+            bullet("Errors during DNA replication"),
+            bullet("Radiation"),
+            bullet("Ultraviolet light"),
+            bullet("Certain chemicals"),
+            bullet("Viruses"),
+
+            bodyText(
+              "Although proofreading reduces mistakes, some errors still escape correction and become permanent mutations.",
+            ),
+
+            const SizedBox(height: 30),
+
+            const Text(
+              "Point Mutations",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "A point mutation involves a change in a single nucleotide base.",
+            ),
+
+            bodyText(
+              "One base is substituted for another base.",
+            ),
+
+            bullet("Only one nucleotide changes"),
+            bullet("Often affects a single codon"),
+
+            const SizedBox(height: 20),
+
+            const Text(
+              "Silent Mutation",
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "A silent mutation changes a DNA sequence but does not change the amino acid that is produced.",
+            ),
+
+            bodyText(
+              "Because multiple codons can code for the same amino acid, the protein remains unchanged.",
+            ),
+
+            bullet("DNA changes"),
+            bullet("Protein remains unchanged"),
+
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.blue.shade50,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Text(
+                "Silent mutation = Mutation with no change in amino acid.",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 20),
+
+            const Text(
+              "Missense Mutation",
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "A missense mutation changes one amino acid into another amino acid.",
+            ),
+
+            bodyText(
+              "The protein is still produced but may function differently.",
+            ),
+
+            bullet("One amino acid replaced"),
+            bullet("Protein may be altered"),
+
+            const SizedBox(height: 20),
+
+            const Text(
+              "Nonsense Mutation",
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "A nonsense mutation changes a normal codon into a stop codon.",
+            ),
+
+            bodyText(
+              "Translation stops too early, producing a shortened protein.",
+            ),
+
+            bullet("Premature stop codon"),
+            bullet("Shortened protein"),
+            bullet("Often harmful"),
+
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.orange.shade50,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Text(
+                "Silent = Same amino acid. Missense = Different amino acid. Nonsense = Stop codon.",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 30),
+
+            const Text(
+              "Insertion Mutations",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "An insertion mutation occurs when one or more nucleotides are added to a DNA sequence.",
+            ),
+
+            bullet("Extra nucleotide added"),
+            bullet("Can disrupt codons"),
+
+            const SizedBox(height: 20),
+
+            const Text(
+              "Deletion Mutations",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "A deletion mutation occurs when one or more nucleotides are removed from DNA.",
+            ),
+
+            bullet("Nucleotide removed"),
+            bullet("Can alter protein sequence"),
+
+            const SizedBox(height: 20),
+
+            const Text(
+              "Frameshift Mutations",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "Insertions and deletions often cause frameshift mutations.",
+            ),
+
+            bodyText(
+              "Because codons are read in groups of three, adding or removing nucleotides shifts the reading frame.",
+            ),
+
+            bodyText(
+              "This changes every codon downstream of the mutation.",
+            ),
+
+            bullet("Changes reading frame"),
+            bullet("Alters many amino acids"),
+            bullet("Usually severe"),
+
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.red.shade50,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Text(
+                "Frameshift mutations are usually more harmful than point mutations because many codons are affected.",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 40),
+
+            const Text(
+              "Cancer and Mutations",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "Most cells carefully control when they grow, divide and die. Cancer develops when mutations disrupt these normal control mechanisms.",
+            ),
+
+            bodyText(
+              "As mutations accumulate, cells may begin dividing uncontrollably.",
+            ),
+
+            bullet("Normal growth control is lost"),
+            bullet("Cell division increases"),
+            bullet("Damaged cells survive"),
+            bullet("Tumours may form"),
+
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.red.shade50,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Text(
+                "Cancer is fundamentally a disease caused by mutations in genes that control cell growth and division.",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 30),
+
+            const Text(
+              "What Is A Tumour?",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "A tumour is a mass of abnormal cells produced when cell division becomes uncontrolled.",
+            ),
+
+            bodyText(
+              "Instead of stopping division when necessary, tumour cells continue multiplying.",
+            ),
+
+            bullet("Abnormal cell mass"),
+            bullet("Produced by excessive cell division"),
+            bullet("May be harmless or dangerous"),
+
+            const SizedBox(height: 20),
+
+            const Text(
+              "Benign Tumours",
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "Benign tumours remain localized and do not spread to other parts of the body.",
+            ),
+
+            bullet("Usually slow growing"),
+            bullet("Remain in one location"),
+            bullet("Do not invade nearby tissues"),
+
+            const SizedBox(height: 20),
+
+            const Text(
+              "Malignant Tumours",
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "Malignant tumours are cancerous tumours that invade surrounding tissues and may spread throughout the body.",
+            ),
+
+            bullet("Cancerous"),
+            bullet("Invade nearby tissues"),
+            bullet("Can spread to distant organs"),
+
+            const SizedBox(height: 20),
+
+            const Text(
+              "Metastasis",
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "Metastasis is the process by which cancer cells spread from one part of the body to another.",
+            ),
+
+            bullet("Cancer cells detach"),
+            bullet("Travel through blood or lymph"),
+            bullet("Establish new tumours elsewhere"),
+
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.orange.shade50,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Text(
+                "Exam Tip: Metastasis is the spread of cancer cells to new locations.",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 30),
+
+            const Text(
+              "Proto-Oncogenes",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "Proto-oncogenes are normal genes that help regulate cell growth and cell division.",
+            ),
+
+            bodyText(
+              "Under normal conditions they are beneficial and necessary for life.",
+            ),
+
+            bullet("Normal genes"),
+            bullet("Promote controlled growth"),
+            bullet("Promote controlled division"),
+
+            bodyText(
+              "You can think of proto-oncogenes as the accelerator pedal of a car. They help cells move forward when growth is needed.",
+            ),
+
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.green.shade50,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Text(
+                "Proto-oncogenes are normal growth-promoting genes.",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 30),
+
+            const Text(
+              "Oncogenes",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "When a proto-oncogene becomes mutated, it may become an oncogene.",
+            ),
+
+            bodyText(
+              "An oncogene causes excessive cell growth and division.",
+            ),
+
+            bullet("Mutated proto-oncogene"),
+            bullet("Overstimulates cell division"),
+            bullet("Can contribute to cancer"),
+
+            bodyText(
+              "Using the car analogy, an oncogene is like an accelerator pedal stuck to the floor.",
+            ),
+
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.red.shade50,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Text(
+                "Proto-oncogene → Mutation → Oncogene",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 30),
+
+            const Text(
+              "Tumour Suppressor Genes",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "Tumour suppressor genes normally prevent uncontrolled cell division.",
+            ),
+
+            bodyText(
+              "They act as the cell's braking system.",
+            ),
+
+            bullet("Slow cell division"),
+            bullet("Repair damaged DNA"),
+            bullet("Trigger apoptosis when necessary"),
+            bullet("Prevent cancer formation"),
+
+            bodyText(
+              "Examples include genes such as p53, which helps prevent damaged cells from dividing.",
+            ),
+
+            bodyText(
+              "When tumour suppressor genes become mutated, the brakes stop working.",
+            ),
+
+            bullet("Growth control lost"),
+            bullet("Damaged cells survive"),
+            bullet("Cancer risk increases"),
+
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.blue.shade50,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Text(
+                "Memory Trick: Oncogenes are the accelerator. Tumour suppressor genes are the brakes.",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 30),
+
+            const Text(
+              "How Cancer Develops",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "Cancer usually develops through the accumulation of multiple mutations over time.",
+            ),
+
+            bodyText(
+              "A typical sequence may be:",
+            ),
+
+            bullet("DNA mutation occurs"),
+            bullet("Proto-oncogene becomes oncogene"),
+            bullet("Tumour suppressor gene becomes damaged"),
+            bullet("Cell cycle control fails"),
+            bullet("Abnormal division occurs"),
+            bullet("Tumour develops"),
+            bullet("Cancer may spread through metastasis"),
+
+            Container(
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: Colors.green.shade50,
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: const Text(
+                "Big Picture: Cancer develops when mutations activate growth-promoting genes and/or disable growth-inhibiting genes.",
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  height: 1.5,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 40),
+
+            const Text(
+              "Gene Expression Calculations",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "Gene expression calculations are common in tests and exams. Fortunately, they follow a few simple rules.",
+            ),
+
+            const SizedBox(height: 30),
+
+            const Text(
+              "Calculation 1: DNA To mRNA",
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "During transcription, mRNA is built using the DNA template strand.",
+            ),
+
+            bodyText(
+              "Example:",
+            ),
+
+            bodyText(
+              "DNA Template: A T G C C A T",
+            ),
+
+            bodyText(
+              "mRNA: U A C G G U A",
+            ),
+
+            bodyText(
+              "Remember:",
+            ),
+
+            bullet("A → U"),
+            bullet("T → A"),
+            bullet("C → G"),
+            bullet("G → C"),
+
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.green.shade50,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Text(
+                "Exam Tip: RNA uses U instead of T.",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 30),
+
+            const Text(
+              "Calculation 2: Codons",
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "A codon consists of three nucleotides.",
+            ),
+
+            bodyText(
+              "To calculate the number of codons:",
+            ),
+
+            bodyText(
+              "Number of Codons = Number of Nucleotides ÷ 3",
+            ),
+
+            bodyText(
+              "Example:",
+            ),
+
+            bodyText(
+              "300 nucleotides ÷ 3 = 100 codons",
+            ),
+
+            const SizedBox(height: 30),
+
+            const Text(
+              "Calculation 3: Amino Acids",
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "One codon usually codes for one amino acid.",
+            ),
+
+            bodyText(
+              "However, one codon will be a stop codon.",
+            ),
+
+            bodyText(
+              "Example:",
+            ),
+
+            bodyText(
+              "100 codons",
+            ),
+
+            bodyText(
+              "1 stop codon",
+            ),
+
+            bodyText(
+              "Protein contains 99 amino acids",
+            ),
+
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.orange.shade50,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Text(
+                "Number of Amino Acids = Number of Codons − 1 Stop Codon",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 30),
+
+            const Text(
+              "Calculation 4: Anticodons",
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            bodyText(
+              "An anticodon is complementary to an mRNA codon.",
+            ),
+
+            bodyText(
+              "Example:",
+            ),
+
+            bodyText(
+              "mRNA Codon: AUG",
+            ),
+
+            bodyText(
+              "tRNA Anticodon: UAC",
+            ),
+
+            bodyText(
+              "Another Example:",
+            ),
+
+            bodyText(
+              "mRNA Codon: GCU",
+            ),
+
+            bodyText(
+              "tRNA Anticodon: CGA",
+            ),
+
+            const SizedBox(height: 40),
+
+            const Text(
+              "Exam Essentials",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            Card(
+              child: Padding(
+                padding: EdgeInsets.all(16),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+
+                    Text("• Gene expression produces proteins."),
+                    Text("• Central Dogma = DNA → RNA → Protein."),
+                    Text("• Transcription occurs in the nucleus."),
+                    Text("• Translation occurs on ribosomes."),
+                    Text("• RNA Polymerase builds RNA."),
+                    Text("• Promoter is where RNA Polymerase binds."),
+                    Text("• Terminator stops transcription."),
+                    Text("• Introns are removed."),
+                    Text("• Exons remain."),
+                    Text("• Splicing removes introns."),
+                    Text("• 5' Cap protects mRNA."),
+                    Text("• Poly-A Tail stabilises mRNA."),
+                    Text("• Codons contain three nucleotides."),
+                    Text("• AUG is the start codon."),
+                    Text("• UAA, UAG and UGA are stop codons."),
+                    Text("• tRNA carries amino acids."),
+                    Text("• Anticodons pair with codons."),
+                    Text("• Aminoacyl-tRNA Synthetase loads amino acids onto tRNA."),
+                    Text("• Ribosomes contain A, P and E sites."),
+                    Text("• Wobble occurs at the third codon position."),
+                    Text("• Mutations permanently alter DNA."),
+                    Text("• Silent, Missense and Nonsense are point mutations."),
+                    Text("• Insertions and deletions may cause frameshifts."),
+                    Text("• Proto-oncogenes promote normal growth."),
+                    Text("• Oncogenes promote uncontrolled growth."),
+                    Text("• Tumour suppressor genes inhibit growth."),
+                    Text("• Cancer results from accumulated mutations."),
+                  ],
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 30),
+
+            const Text(
+              "Practice Questions",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            Card(
+              child: Padding(
+                padding: EdgeInsets.all(16),
+                child: Text(
+                  "1. Define gene expression.\n\n"
+                      "2. State the Central Dogma.\n\n"
+                      "3. What is transcription?\n\n"
+                      "4. What is translation?\n\n"
+                      "5. What is the function of RNA Polymerase?\n\n"
+                      "6. Distinguish between a promoter and a terminator.\n\n"
+                      "7. What are introns?\n\n"
+                      "8. What are exons?\n\n"
+                      "9. What is RNA splicing?\n\n"
+                      "10. What is the function of the 5' Cap?\n\n"
+                      "11. What is the function of the Poly-A Tail?\n\n"
+                      "12. What is a codon?\n\n"
+                      "13. What is an anticodon?\n\n"
+                      "14. What is the function of tRNA?\n\n"
+                      "15. What is the role of Aminoacyl-tRNA Synthetase?\n\n"
+                      "16. Name the three ribosomal sites.\n\n"
+                      "17. Explain wobble.\n\n"
+                      "18. Define mutation.\n\n"
+                      "19. Distinguish between silent, missense and nonsense mutations.\n\n"
+                      "20. What is a frameshift mutation?\n\n"
+                      "21. Define tumour.\n\n"
+                      "22. Distinguish between benign and malignant tumours.\n\n"
+                      "23. What is metastasis?\n\n"
+                      "24. What is a proto-oncogene?\n\n"
+                      "25. What is an oncogene?\n\n"
+                      "26. What is a tumour suppressor gene?\n\n"
+                      "27. Convert DNA template ATGCCA into mRNA.\n\n"
+                      "28. Determine the anticodon for AUG.\n\n"
+                      "29. How many codons are present in 300 nucleotides?\n\n"
+                      "30. How many amino acids are produced from 90 codons?",
+                  style: TextStyle(
+                    fontSize: 16,
+                    height: 1.6,
+                  ),
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 30),
+
+            const Text(
+              "Suggested Answers",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            const SizedBox(height: 15),
+
+            Card(
+              child: Padding(
+                padding: EdgeInsets.all(16),
+                child: Text(
+                  "1. Gene expression is the process by which DNA information is used to produce proteins.\n\n"
+                      "2. DNA → RNA → Protein.\n\n"
+                      "3. Transcription is the synthesis of RNA from a DNA template.\n\n"
+                      "4. Translation is the synthesis of proteins from mRNA.\n\n"
+                      "5. RNA Polymerase synthesizes RNA.\n\n"
+                      "6. A promoter starts transcription while a terminator ends transcription.\n\n"
+                      "7. Introns are non-coding regions removed from pre-mRNA.\n\n"
+                      "8. Exons are coding regions that remain in mature mRNA.\n\n"
+                      "9. RNA splicing removes introns and joins exons.\n\n"
+                      "10. The 5' Cap protects mRNA and assists ribosome binding.\n\n"
+                      "11. The Poly-A Tail stabilizes mRNA and protects it from degradation.\n\n"
+                      "12. A codon is a sequence of three mRNA nucleotides.\n\n"
+                      "13. An anticodon is a complementary three-base sequence on tRNA.\n\n"
+                      "14. tRNA transports amino acids to the ribosome.\n\n"
+                      "15. Aminoacyl-tRNA Synthetase attaches amino acids to tRNA.\n\n"
+                      "16. A site, P site and E site.\n\n"
+                      "17. Wobble is flexibility in pairing at the third codon position.\n\n"
+                      "18. A mutation is a permanent change in DNA sequence.\n\n"
+                      "19. Silent = same amino acid, Missense = different amino acid, Nonsense = stop codon.\n\n"
+                      "20. A frameshift mutation changes the reading frame of codons.\n\n"
+                      "21. A tumour is a mass of abnormally dividing cells.\n\n"
+                      "22. Benign tumours remain localized while malignant tumours spread and invade tissues.\n\n"
+                      "23. Metastasis is the spread of cancer cells to new locations.\n\n"
+                      "24. A proto-oncogene is a normal growth-promoting gene.\n\n"
+                      "25. An oncogene is a mutated proto-oncogene that promotes excessive cell division.\n\n"
+                      "26. Tumour suppressor genes inhibit uncontrolled cell growth.\n\n"
+                      "27. DNA template ATGCCA → mRNA UACGGU.\n\n"
+                      "28. AUG anticodon = UAC.\n\n"
+                      "29. 300 ÷ 3 = 100 codons.\n\n"
+                      "30. 90 codons − 1 stop codon = 89 amino acids.",
+                  style: TextStyle(
+                    fontSize: 16,
+                    height: 1.6,
+                  ),
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 30),
+
+            Container(
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: Colors.blue.shade50,
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: const Text(
+                "Congratulations! You have completed Gene Expression and Mutation. You should now understand how genetic information flows from DNA to RNA to proteins, how transcription and translation work, how mutations affect genes, and how oncogenes and tumour suppressor genes contribute to cancer development. This topic connects DNA structure, replication, protein synthesis and cell division into one complete biological system.",
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  height: 1.6,
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 50),
 
           ],
         ),
