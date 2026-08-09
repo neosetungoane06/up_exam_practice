@@ -206,7 +206,7 @@ class CellsAndCellStructurePage extends StatelessWidget {
 
             bullet("Bacteria"),
             bullet("Archaea"),
-            bullet("No nucleus"),
+            bullet("No true nucleus"),
             bullet("DNA free in cytoplasm"),
             bullet("No membrane-bound organelles"),
 
@@ -224,7 +224,7 @@ class CellsAndCellStructurePage extends StatelessWidget {
             bullet("Plants"),
             bullet("Fungi"),
             bullet("Protists"),
-            bullet("Have a nucleus"),
+            bullet("Have a true nucleus"),
             bullet("Have membrane-bound organelles"),
 
 sectionTitle("3. Organelles and Their Functions"),
@@ -574,7 +574,7 @@ Container(
 
             sectionTitle("The Endomembrane System"),
 
-            topicImage("assets/Endomembrane System.png"),
+            topicImage("assets/Endomembrane_System.png"),
 
             bodyText(
               "The endomembrane system is a group of interconnected membranes and organelles that work together to synthesise, modify, package and transport proteins and lipids throughout the cell.",

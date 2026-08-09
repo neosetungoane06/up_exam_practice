@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "651660753867",
+    "project_id": "clario-d9bfb",
+    "storage_bucket": "clario-d9bfb.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:651660753867:android:3741aa5d08954ea60e544e",
+        "android_client_info": {
+          "package_name": "com.example.up_exam_practice"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAiLHONVlCCONXRMX9r80copJgyQQ9juFU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -43,3 +43,8 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+# Firebase migration credentials
+migration/serviceAccountKey.json
+
+# Migration dependencies
+migration/node_modules/

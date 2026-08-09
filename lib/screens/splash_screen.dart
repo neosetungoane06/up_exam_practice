@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'home_screen.dart';
+import 'auth_gate.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -9,79 +9,57 @@ class SplashScreen extends StatefulWidget {
   State<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen> {
+class _SplashScreenState extends State<SplashScreen>
+    with SingleTickerProviderStateMixin {
+
+  late AnimationController _controller;
+  late Animation<double> _fade;
+
   @override
   void initState() {
     super.initState();
 
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 1),
+    );
+
+    _fade = CurvedAnimation(
+      parent: _controller,
+      curve: Curves.easeIn,
+    );
+
+    _controller.forward();
+
     Timer(const Duration(seconds: 3), () {
+      if (!mounted) return;
+
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => const HomeScreen(),
+          builder: (_) => const AuthGate(),
         ),
       );
     });
   }
 
   @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF8FAFC),
-      body: SafeArea(
-        child: Center(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 30),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Text(
-                  'Recap',
-                  style: TextStyle(
-                    fontSize: 42,
-                    fontWeight: FontWeight.bold,
-                    color: Color(0xFF1E40AF),
-                    letterSpacing: 1.2,
-                  ),
-                ),
+      backgroundColor: const Color(0xFF06142D),
 
-                const SizedBox(height: 40),
-
-                const Text(
-                  '🎓',
-                  style: TextStyle(fontSize: 90),
-                ),
-
-                const SizedBox(height: 30),
-
-                const Text(
-                  'Welcome to Recap 👋',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 28,
-                    fontWeight: FontWeight.w700,
-                    color: Color(0xFF0F172A),
-                  ),
-                ),
-
-                const SizedBox(height: 16),
-
-                const Text(
-                  'Study Smarter. Practice Faster.',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 16,
-                    color: Color(0xFF475569),
-                  ),
-                ),
-
-                const SizedBox(height: 50),
-
-                const CircularProgressIndicator(
-                  color: Color(0xFF1E40AF),
-                ),
-              ],
-            ),
+      body: FadeTransition(
+        opacity: _fade,
+        child: SizedBox.expand(
+          child: Image.asset(
+            "assets/splash_screen/splash_screen.png",
+            fit: BoxFit.cover,
           ),
         ),
       ),
