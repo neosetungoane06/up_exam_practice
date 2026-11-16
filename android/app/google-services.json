@@ -12,7 +12,28 @@
           "package_name": "com.example.up_exam_practice"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "651660753867-shj63ndl48gag00abpgp50d1ai0l6l68.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.up_exam_practice",
+            "certificate_hash": "c45c67a0417fdcff264ec62745ccc44ee57408ac"
+          }
+        },
+        {
+          "client_id": "651660753867-svcr8lcov3vour4v1jj1jfkb7db08766.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.up_exam_practice",
+            "certificate_hash": "2b6fead40a8ff7dc1bbdaf9d46f64452596f0f99"
+          }
+        },
+        {
+          "client_id": "651660753867-pd4i66gi4748tkjapofe65f3o5em6anr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyAiLHONVlCCONXRMX9r80copJgyQQ9juFU"
@@ -20,7 +41,63 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "651660753867-pd4i66gi4748tkjapofe65f3o5em6anr.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "651660753867-gnsi27uea0mqd7hgtjm9qh8kqi80o5km.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.upExamPractice"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:651660753867:android:ff1cb11c97343b760e544e",
+        "android_client_info": {
+          "package_name": "com.keplerstudy.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "651660753867-7fnna37b3lvq5244sjs2296c5jms5f8p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.keplerstudy.app",
+            "certificate_hash": "5b091fd86a463c697d47ceb12e58c15eab5c4221"
+          }
+        },
+        {
+          "client_id": "651660753867-pd4i66gi4748tkjapofe65f3o5em6anr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAiLHONVlCCONXRMX9r80copJgyQQ9juFU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "651660753867-pd4i66gi4748tkjapofe65f3o5em6anr.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "651660753867-gnsi27uea0mqd7hgtjm9qh8kqi80o5km.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.upExamPractice"
+              }
+            }
+          ]
         }
       }
     }

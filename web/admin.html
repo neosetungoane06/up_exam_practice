@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex,nofollow">
+    <title>Kepler admin</title>
+    <style>
+        :root{--bg:#f8fafc;--card:#fff;--text:#0f172a;--muted:#64748b;--line:#e2e8f0;--accent:#4f46e5;--bad:#b91c1c;--ok:#047857}
+        @media (prefers-color-scheme:dark){:root{--bg:#0b1220;--card:#111a2e;--text:#e5e7eb;--muted:#94a3b8;--line:#1e293b;--accent:#818cf8;--bad:#f87171;--ok:#34d399}}
+        *{box-sizing:border-box}
+        body{margin:0;background:var(--bg);color:var(--text);font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+        header{display:flex;gap:12px;align-items:center;padding:14px 20px;border-bottom:1px solid var(--line);background:var(--card)}
+        header h1{font-size:18px;margin:0;flex:1}
+        button,select,input,textarea{font:inherit;color:inherit}
+        button{border:1px solid var(--line);background:var(--card);padding:8px 14px;border-radius:10px;cursor:pointer}
+        button.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+        button.danger{background:var(--bad);border-color:var(--bad);color:#fff}
+        button:disabled{opacity:.5;cursor:default}
+        nav{display:flex;flex-wrap:wrap;gap:8px;padding:14px 20px}
+        nav button.on{border-color:var(--accent);color:var(--accent);font-weight:600}
+        nav form{display:flex;gap:8px;margin-left:auto}
+        input,select,textarea{border:1px solid var(--line);background:var(--card);padding:8px 10px;border-radius:10px;width:100%}
+        textarea{min-height:70px;resize:vertical}
+        .cols{display:grid;grid-template-columns:minmax(260px,380px) 1fr;gap:16px;padding:0 20px 40px}
+        @media (max-width:800px){.cols{grid-template-columns:1fr}}
+        .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;margin-bottom:12px}
+        .row{padding:10px 12px;border:1px solid var(--line);border-radius:12px;margin-bottom:8px;cursor:pointer;background:var(--card)}
+        .row:hover,.row.on{border-color:var(--accent)}
+        .muted{color:var(--muted);font-size:13px}
+        .pill{display:inline-block;padding:2px 9px;border-radius:999px;font-size:12px;border:1px solid var(--line);margin-right:4px}
+        .pill.suspended,.pill.banned{color:var(--bad);border-color:var(--bad)}
+        .pill.restricted{color:#b45309;border-color:#b45309}
+        .pill.active{color:var(--ok);border-color:var(--ok)}
+        h2{font-size:16px;margin:0 0 8px}
+        label{display:block;font-size:13px;color:var(--muted);margin:10px 0 4px}
+        table{width:100%;border-collapse:collapse;font-size:13px}
+        td,th{text-align:left;padding:5px 6px;border-bottom:1px solid var(--line);vertical-align:top}
+        .msg{margin:10px 20px;padding:10px 12px;border-radius:10px;border:1px solid var(--line)}
+        .msg.err{color:var(--bad);border-color:var(--bad)}
+        [hidden]{display:none!important}
+    </style>
+</head>
+<body>
+<header>
+    <h1>Kepler admin</h1>
+    <span id="who" class="muted"></span>
+    <button id="signin" class="primary">Sign in with Google</button>
+    <button id="signout" hidden>Sign out</button>
+</header>
+<div id="msg" class="msg" hidden></div>
+
+<main id="app" hidden>
+    <nav>
+        <button data-tab="review">Needs review</button>
+        <button data-tab="restricted">Restricted</button>
+        <button data-tab="blocked">Suspended / banned</button>
+        <form id="searchForm"><input id="q" type="email" placeholder="Find by email" style="width:240px"><button>Search</button></form>
+    </nav>
+    <div class="cols">
+        <section id="list"></section>
+        <section id="detail"><p class="muted">Pick an account on the left.</p></section>
+    </div>
+</main>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-functions-compat.js"></script>
+<script>
+    // ---- PASTE YOUR WEB API KEY HERE (lib/firebase_options.dart, the `web` apiKey) ----
+    const firebaseConfig = {
+      apiKey: "PASTE_WEB_API_KEY",
+      authDomain: "clario-d9bfb.firebaseapp.com",
+      projectId: "clario-d9bfb",
+      appId: "1:651660753867:web:f9dd5106c40678790e544e"
+    };
+    // -----------------------------------------------------------------------------------
+
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+    const fns = firebase.functions();
+    const call = (name, data) => fns.httpsCallable(name)(data || {}).then(r => r.data);
+
+    const $ = (id) => document.getElementById(id);
+    const esc = (s) => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+    const when = (ms) => ms ? new Date(ms).toLocaleString() : "-";
+
+    let tab = "review";
+    let reasons = [];
+    let currentUid = null;
+
+    function say(text, isErr) {
+      const m = $("msg");
+      m.hidden = !text;
+      m.textContent = text || "";
+      m.className = "msg" + (isErr ? " err" : "");
+    }
+
+    $("signin").onclick = () => auth.signInWithPopup(new firebase.auth.GoogleAuthProvider()).catch(e => say(e.message, true));
+    $("signout").onclick = () => auth.signOut();
+
+    auth.onAuthStateChanged(user => {
+      $("signin").hidden = !!user;
+      $("signout").hidden = !user;
+      $("who").textContent = user ? user.email : "";
+      $("app").hidden = !user;
+      if (user) loadList(); else say("");
+    });
+
+    document.querySelectorAll("nav [data-tab]").forEach(b => {
+      b.onclick = () => { tab = b.dataset.tab; loadList(); };
+    });
+
+    $("searchForm").onsubmit = async (e) => {
+      e.preventDefault();
+      const email = $("q").value.trim();
+      if (!email) return;
+      say("");
+      try {
+        const r = await call("adminFind", {email});
+        openAccount(r.uid);
+      } catch (err) { say(err.message, true); }
+    };
+
+    async function loadList() {
+      document.querySelectorAll("nav [data-tab]").forEach(b => b.classList.toggle("on", b.dataset.tab === tab));
+      $("list").innerHTML = '<p class="muted">Loading...</p>';
+      say("");
+      try {
+        const r = await call("adminList", {filter: tab});
+        reasons = r.reasons || reasons;
+        if (!r.accounts.length) { $("list").innerHTML = '<p class="muted">Nothing here.</p>'; return; }
+        $("list").innerHTML = r.accounts.map(a => `
+          <div class="row ${a.uid === currentUid ? "on" : ""}" data-uid="${esc(a.uid)}">
+            <div><b>${esc(a.email || a.uid)}</b></div>
+            <div><span class="pill ${esc(a.status)}">${esc(a.status)}</span>${a.reviewNeeded ? '<span class="pill">needs review</span>' : ""}${a.flagReason ? `<span class="pill">${esc(a.flagReason)}</span>` : ""}</div>
+            <div class="muted">Ref ${esc(a.ref)} · strikes ${a.strikes} · ${when(a.updatedAtMs)}</div>
+          </div>`).join("");
+        $("list").querySelectorAll(".row").forEach(el => el.onclick = () => openAccount(el.dataset.uid));
+      } catch (err) { $("list").innerHTML = ""; say(err.message, true); }
+    }
+
+    async function openAccount(uid) {
+      currentUid = uid;
+      $("detail").innerHTML = '<p class="muted">Loading...</p>';
+      try {
+        const a = await call("adminGetAccount", {uid});
+        reasons = a.reasons || reasons;
+        renderAccount(a);
+      } catch (err) { $("detail").innerHTML = ""; say(err.message, true); }
+    }
+
+    function renderAccount(a) {
+      const reasonOpts = reasons.map(r => `<option value="${esc(r.code)}">${esc(r.title)}</option>`).join("");
+      $("detail").innerHTML = `
+        <div class="card">
+          <h2>${esc(a.email || a.uid)}</h2>
+          <div><span class="pill ${esc(a.effectiveStatus)}">${esc(a.effectiveStatus)}</span>${a.reviewNeeded ? '<span class="pill">needs review</span>' : ""}${a.flagReason ? `<span class="pill">${esc(a.flagReason)}</span>` : ""}</div>
+          <p class="muted">Ref ${esc(a.ref)} · plan ${esc(a.plan)} · Terms ${esc(a.termsVersion || "-")} · strikes ${a.strikes} · uploads in current window ${a.recentUploads}</p>
+          <p class="muted">Current reason: ${esc(a.reasonCode || "-")} · decided ${when(a.decidedAtMs)} by ${esc(a.decidedBy || "-")}${a.restrictedUntilMs ? " · until " + when(a.restrictedUntilMs) : ""}</p>
+          ${a.userMessage ? `<p>Message shown to the student: <i>${esc(a.userMessage)}</i></p>` : ""}
+          ${a.adminNote ? `<p class="muted">Internal note: ${esc(a.adminNote)}</p>` : ""}
+        </div>
+
+        <div class="card">
+          <h2>Decide</h2>
+          <p class="muted">The student sees the reason, the Terms rule, your message and how to appeal. Look at the evidence below first.</p>
+          <label>Status</label>
+          <select id="f_status">
+            <option value="active">Active (lift everything)</option>
+            <option value="restricted">Restricted (uploads paused)</option>
+            <option value="suspended">Suspended</option>
+            <option value="banned">Banned (closed)</option>
+          </select>
+          <label>Reason (shown to the student)</label>
+          <select id="f_reason">${reasonOpts}</select>
+          <label>Restricted for how many days? (blank = until you lift it)</label>
+          <input id="f_days" type="number" min="1" placeholder="e.g. 7">
+          <label>Message to the student (optional, shown on their screen)</label>
+          <textarea id="f_msg" maxlength="500"></textarea>
+          <label>Internal note (only you see this)</label>
+          <textarea id="f_note" maxlength="1000"></textarea>
+          <p><button id="apply" class="primary">Apply decision</button>
+             <button id="dismiss">Dismiss flag only</button></p>
+        </div>
+
+        <div class="card"><h2>Devices (${a.devices.length} of 5)</h2>
+          ${a.devices.length ? `<table>${a.devices.map(d => `<tr><td>${esc(d.label)}</td><td>${esc(d.platform)}</td><td>${when(d.lastSeenMs)}</td></tr>`).join("")}</table>` : '<p class="muted">None recorded.</p>'}
+        </div>
+
+        <div class="card"><h2>Flagged items</h2>
+          ${a.violations.length ? `<table><tr><th>When</th><th>Reason</th><th>Severity</th><th>Excerpt / reference</th></tr>${a.violations.map(v => `<tr><td>${when(v.atMs)}</td><td>${esc(v.reasonCode)}</td><td>${esc(v.severity)}</td><td>${esc(v.excerpt || "")} ${esc(v.reference || "")}</td></tr>`).join("")}</table>` : '<p class="muted">None.</p>'}
+        </div>
+
+        <div class="card"><h2>History</h2>
+          ${a.history.length ? `<table><tr><th>When</th><th>Status</th><th>Reason</th><th>By</th><th>Notes</th></tr>${a.history.map(h => `<tr><td>${when(h.atMs)}</td><td>${esc(h.status)}</td><td>${esc(h.reasonCode)}</td><td>${esc(h.by)}</td><td>${esc(h.userMessage || "")} ${h.adminNote ? "(note: " + esc(h.adminNote) + ")" : ""}</td></tr>`).join("")}</table>` : '<p class="muted">No decisions yet.</p>'}
+        </div>`;
+
+      $("f_status").value = a.effectiveStatus === "active" ? "suspended" : a.effectiveStatus;
+      if (a.reasonCode) $("f_reason").value = a.reasonCode;
+
+      $("apply").onclick = async () => {
+        const status = $("f_status").value;
+        const label = $("f_status").selectedOptions[0].textContent;
+        if (!confirm(`Apply "${label}" to ${a.email}?`)) return;
+        $("apply").disabled = true;
+        try {
+          await call("adminSetStanding", {
+            uid: a.uid, status,
+            reasonCode: $("f_reason").value,
+            restrictedDays: Number($("f_days").value || 0),
+            userMessage: $("f_msg").value,
+            adminNote: $("f_note").value
+          });
+          say("Saved.");
+          await openAccount(a.uid);
+          loadList();
+        } catch (err) { say(err.message, true); $("apply").disabled = false; }
+      };
+
+      $("dismiss").onclick = async () => {
+        try { await call("adminDismissFlag", {uid: a.uid}); say("Flag dismissed."); await openAccount(a.uid); loadList(); }
+        catch (err) { say(err.message, true); }
+      };
+    }
+</script>
+</body>
+</html>
